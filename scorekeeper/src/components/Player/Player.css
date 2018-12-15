@@ -1,0 +1,41 @@
+.Player {
+  padding: 0px 20px;
+  width: 500px;
+  text-align: left;
+  background-color: #90ccfd;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  line-height: 50px;
+  margin: 5px 0;
+}
+
+.Player__name {
+  background-color: #90ccfd;
+  color: #696969;
+  width: 200px;
+}
+
+.Player__score {
+  background-color: #90ccfd;
+  color: #696969;
+  width: 100px;
+}
+
+.Player__score,
+.Player__button__minus,
+.Player__button__remove {
+  margin-left: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.Player__button__plus,
+.Player__button__minus {
+  cursor: pointer;
+  background-color: #696969;
+  padding: 0 15px;
+  color: white;
+  cursor: pointer;
+}
