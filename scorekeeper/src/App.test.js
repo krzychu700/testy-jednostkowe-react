@@ -3,7 +3,6 @@ import { shallow } from "enzyme";
 import App from "./App";
 import PlayersList from "./components/PlayersList/PlayersList";
 import AddPlayer from "./components/AddPlayer/AddPlayer";
-import Player from "./components/Player/Player";
 
 it("renders without crashing", () => {
   shallow(<App />);
@@ -63,14 +62,21 @@ it("deletes a player", () => {
   expect(playersAfterRemoving).toEqual([]);
 });
 
-//jak przetestowac reset?
 it("reset the score number", () => {
-  const resetPlayerScore = 0;
-  const playerComponent = shallow(<Player score={resetPlayerScore} />);
+  const players = [
+    {
+      name: "Kunegunda",
+      score: 5
+    }
+  ];
 
-  const playerScoreRendered = Number(
-    playerComponent.find(".Player__score").text()
-  );
+  const appComponent = shallow(<App />);
 
-  expect(playerScoreRendered).toEqual(resetPlayerScore);
+  appComponent.setState({ players });
+
+  appComponent.instance().resetScores();
+
+  const scoreAfterReset = appComponent.state().players[0].score;
+
+  expect(scoreAfterReset).toEqual(0);
 });

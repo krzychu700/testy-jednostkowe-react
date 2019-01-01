@@ -80,7 +80,9 @@ class App extends Component {
       <div className="App">
         <AddPlayer onPlayerAdd={this.onPlayerAdd} />
         <button onClick={this.onScoreSort}>Sort</button>
-        <button onClick={this.resetScores}>Reset</button>
+        <button className="reset" onClick={this.resetScores}>
+          Reset
+        </button>
         <PlayersList
           onPlayerUpdate={this.onPlayerUpdate}
           players={this.state.players}
