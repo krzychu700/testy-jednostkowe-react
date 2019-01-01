@@ -29,7 +29,7 @@ class App extends Component {
     });
   };
 
-  resetScores = () => {
+  onResetScores = () => {
     this.setState({
       players: this.state.players.map(player => {
         return { ...player, score: 0 };
@@ -80,7 +80,7 @@ class App extends Component {
       <div className="App">
         <AddPlayer onPlayerAdd={this.onPlayerAdd} />
         <button onClick={this.onScoreSort}>Sort</button>
-        <button className="reset" onClick={this.resetScores}>
+        <button className="reset" onClick={this.onResetScores}>
           Reset
         </button>
         <PlayersList

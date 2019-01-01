@@ -74,7 +74,7 @@ it("reset the score number", () => {
 
   appComponent.setState({ players });
 
-  appComponent.instance().resetScores();
+  appComponent.instance().onResetScores();
 
   const scoreAfterReset = appComponent.state().players[0].score;
 
