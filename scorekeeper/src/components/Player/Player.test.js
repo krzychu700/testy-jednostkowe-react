@@ -2,14 +2,14 @@ import Player from "./Player";
 import React from "react";
 import { shallow } from "enzyme";
 
-it("renders correct name", () => {
-  const playerNamePassed = "Ania";
-  const playerComponent = shallow(<Player name={playerNamePassed} />);
+// it("renders correct name", () => {
+//   const playerNamePassed = "AniaA";
+//   const playerComponent = shallow(<Player name={playerNamePassed} />);
 
-  const playerNameRendered = playerComponent.find(".Player__name").text();
+//   const playerNameRendered = playerComponent.find(".Player__name").text();
 
-  expect(playerNameRendered).toEqual(playerNamePassed);
-});
+//   expect(playerNameRendered).toEqual(playerNamePassed);
+// });
 
 it("renders the score number", () => {
   const playerScorePassed = 10;

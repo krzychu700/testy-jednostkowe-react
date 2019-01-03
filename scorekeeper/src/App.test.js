@@ -80,3 +80,24 @@ it("reset the score number", () => {
 
   expect(scoreAfterReset).toEqual(0);
 });
+
+it("sort", () => {
+  const players = [
+    {
+      name: "Kunegunda",
+      score: 0
+    },
+    {
+      name: "Antoś",
+      score: 5
+    }
+  ];
+
+  const appComponent = shallow(<App />);
+  appComponent.setState({ players });
+  appComponent.instance().onScoreSort();
+
+  const scoreAfterReset = appComponent.state().players[0].score;
+
+  expect(scoreAfterReset).toEqual(5);
+});
